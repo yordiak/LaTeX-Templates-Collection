@@ -1,0 +1,85 @@
+\documentclass[a4paper,12pt]{scrartcl}
+
+% ========= Basic Packages =========
+\usepackage{mathtools,amssymb}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[style=authoryear,sortcites=true,sorting=nyt,backend=biber,maxcitenames=2]{biblatex}
+\usepackage{xpatch}
+
+% ============ Useful Packages =================
+\usepackage{amsthm,cases,abstract,xcolor}
+\usepackage[inline]{enumitem}
+\usepackage{stix} % Text and math font 
+
+% ============== Various Configurations ============
+
+% Mathematics
+\DeclareMathOperator*{\argmax}{argmax}
+\DeclareMathOperator*{\argmin}{argmin}
+
+
+% Redefining eqref command
+\xpretocmd{\eqref}{Eq.~}{}{}
+
+% Creating new environments
+\newtheorem{lemma}{Lemma}
+\newtheorem{prop}{Proposition}
+\newtheorem{defn}{Definition}
+
+% Redefining abstract environment
+\renewenvironment{abstract}{%
+\par\noindent\begin{minipage}{\textwidth}
+\rule{\textwidth}{1pt}\\
+\textbf{Abstract:}}
+{\par\noindent\rule{\textwidth}{1pt}\end{minipage}}
+%
+\makeatletter
+\renewcommand\@maketitle{%
+\hfill
+\begin{minipage}{\textwidth}
+\vskip 2em
+\let\footnote\thanks
+{\LARGE \@title \par }
+\vskip 1.5em
+{\large \@author \par }
+\end{minipage}
+\vskip 1em \par
+}
+\makeatother
+
+% Formatting citations
+\AtEveryBibitem{
+	\clearfield{month}
+	}
+\DeclareLanguageMapping{american}{american-apa}
+
+% Removes "retrieved from on date" from bibliography entry unless it is a wiki URL, which is closer to the spirit of APA's rule. See biblatex-apa documentation for more info.
+\DeclareSourcemap{
+	\maps[datatype=bibtex]{
+		\map{
+			\step[fieldsource=url,
+			notmatch=\regexp{wiki},
+			final=1]
+			\step[fieldset=urldate, null]
+			}
+		}
+	}
+
+\renewcommand*{\nameyeardelim}{\addcomma\space} % Include comma in authoryear citation style
+
+\addbibresource{bibliography.bib} % Bib source
+
+
+\title{}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+
+\end{document}
