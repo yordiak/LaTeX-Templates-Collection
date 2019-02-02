@@ -1,5 +1,4 @@
-This is a my collection of LaTeX tempates that I use for writing alsmost all my documents. So far it includes two files: one for single-lingual 
-purposes (std_artcl) and one for multi-lingual purposes (multi_std_artcl).
+This is a my perosnal collection of LaTeX tempates that I use for writing alsmost all my documents. So far it includes two files: one for single-lingual purposes (std_artcl) and one for multi-lingual purposes (multi_std_artcl).
 
 Common Packages and Configuration
 ====================================
