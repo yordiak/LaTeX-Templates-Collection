@@ -2,9 +2,8 @@
 
 % ========= Basic Packages =========
 \usepackage{mathtools,amssymb}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[english]{babel}
+\usepackage{unicode-math}
+\usepackage{polyglossia}
 \usepackage{csquotes}
 \usepackage[style=authoryear,sortcites=true,sorting=nyt,backend=biber,maxcitenames=2]{biblatex}
 \usepackage{xpatch}
@@ -20,6 +19,13 @@
 \DeclareMathOperator*{\argmax}{argmax}
 \DeclareMathOperator*{\argmin}{argmin}
 
+% Fonts
+\setmainfont{GFS Neohellenic}
+\setmathfont{GFS Neohellenic Math}
+
+% Language setup
+\setmainlanguage{english}
+\setotherlanguage[variant=modern]{greek}
 
 % Redefining eqref command
 \xpretocmd{\eqref}{Eq.~}{}{}
