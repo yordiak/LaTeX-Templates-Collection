@@ -1,5 +1,5 @@
 This is a my collection of LaTeX tempates that I use for writing alsmost all my documents. So far it includes two files: one for single-lingual 
-purposes and one for multi-lingual purposes.
+purposes (std_artcl) and one for multi-lingual purposes (multi_std_artcl).
 
 Common Packages and Configuration
 ====================================
@@ -18,3 +18,7 @@ This list includes packages that are pre-loaded in every template:
 
 Template-related Packages
 ===========================
+
+* the `std_artcl` template should be compliled with the `pdflatex` engine, whereas the `multi_std_artcl` requires `xelatex/lualatex` engines
+* `std_artcl` loads 
+  *`babel`, whereas `multi_std_artcl` loads `polyglossia`
