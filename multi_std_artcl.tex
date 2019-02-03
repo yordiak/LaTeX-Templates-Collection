@@ -40,6 +40,33 @@
 \definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
 \definecolor{cornellred}{rgb}{0.7, 0.11, 0.11}
 
+\usepackage[colorlinks=true,allcolors=midnightblue]{hyperref}
+
+% Coloring \textcite and \parencite cpmmands
+\DeclareCiteCommand{\textcite}
+  {\color{midnightblue}\usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\DeclareCiteCommand{\parencite}[\mkcolorbibparens]
+  {\usebibmacro{prenote}}%
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+  
+ \makeatletter
+\newrobustcmd{\mkcolorbibparens}[1]{%
+  \begingroup
+  \color{midnightblue}%
+  \blx@blxinit
+  \blx@setsfcodes
+  \bibopenparen#1\bibcloseparen
+  \endgroup}
+\makeatother
+
 % Redefining abstract environment
 \renewenvironment{abstract}{%
 \par\noindent\begin{minipage}{\textwidth}
