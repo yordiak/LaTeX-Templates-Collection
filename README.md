@@ -14,7 +14,7 @@ This list includes packages that are pre-loaded in every template:
 * declaring `min/max` math operators
 * redefining `eqref` command and the `abstract` and `title` environments
 * creating `lemma`, `proposition` and `definition` environments
-* modifying ciataions
+* coloring citations
 
 Template-related Packages
 ===========================
