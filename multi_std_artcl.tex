@@ -42,8 +42,7 @@
 
 \usepackage[colorlinks=true,allcolors=midnightblue]{hyperref}
 
-% Coloring \textcite and \parencite cpmmands
-\DeclareCiteCommand{\textcite}
+\DeclareCiteCommand{\cite}
   {\color{midnightblue}\usebibmacro{prenote}}%
   {\usebibmacro{citeindex}%
    \usebibmacro{cite}}
@@ -57,7 +56,7 @@
   {\multicitedelim}
   {\usebibmacro{postnote}}
   
- \makeatletter
+  \makeatletter
 \newrobustcmd{\mkcolorbibparens}[1]{%
   \begingroup
   \color{midnightblue}%
@@ -66,6 +65,8 @@
   \bibopenparen#1\bibcloseparen
   \endgroup}
 \makeatother
+
+\newcommand{\colortextcite}[1]{\textcolor{midnightblue}{\textcite{#1}}}
 
 % Redefining abstract environment
 \renewenvironment{abstract}{%
