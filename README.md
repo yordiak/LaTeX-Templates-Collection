@@ -21,4 +21,4 @@ Template-related Packages
 
 * the `std_artcl` template should be compliled with the `pdflatex` engine, whereas the `multi_std_artcl` requires the `lualatex` engine
 * `std_artcl` loads `babel`, `inpuntenc` (with `utf8` option) and `fontenc` (with `T1` option), whereas `multi_std_artcl` loads `polyglossia` and `unicode-math`
-* `std_artcl`  uses the STIX font (by loading the `stix` package), whereas `multi_std_artcl` uses GFS Neohellenic font for both text and math
+* `std_artcl`  uses the STIX 2 font (by loading the `stix2` package), whereas `multi_std_artcl` uses GFS Neohellenic font for both text and math
